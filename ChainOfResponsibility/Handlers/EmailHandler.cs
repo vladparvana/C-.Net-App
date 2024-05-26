@@ -5,10 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ChainOfResponsibility.Handlers
 {
+    /// <summary>
+    /// Clasa folosita pentru verificare a email-ului
+    /// </summary>
     public class EmailHandler : UserHandler
     {
+        /// <summary>
+        /// Metoda de verificare a email-ului User-ului
+        /// </summary>
+        /// <param name="user">Obiectul de tip User </param>
         public override void Handle(User user)
         {
             if (!IsValidEmail(user.Email))
@@ -18,6 +26,10 @@ namespace ChainOfResponsibility.Handlers
             base.Handle(user);
         }
 
+        /// <summary>
+        /// Metoda care verifica daca email-ul are format valid
+        /// </summary>
+        /// <param name="user">Obiectul de tip User </param>
         private bool IsValidEmail(string email)
         {
             try

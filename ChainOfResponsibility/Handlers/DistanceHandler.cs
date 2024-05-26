@@ -5,10 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ChainOfResponsibility.Handlers
 {
+    /// <summary>
+    /// Clasa folosita pentru verificare a distantei
+    /// </summary>
     public class DistanceHandler :FlightHandler
     {
+        /// <summary>
+        /// Metoda de verificare a distantei
+        /// </summary>
+        /// <param name="flight">Obiectul de tip Flight </param>
         public override void Handle(Flight flight)
         {
             if ( flight.Distanta < 0)

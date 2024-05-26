@@ -12,9 +12,17 @@ using System.Windows.Forms;
 
 namespace ProiectIP
 {
+    /// <summary>
+    /// Fereastra pentru vizualizarea și cumpărarea zborurilor disponibile.
+    /// </summary>
     public partial class UserFlightsForm : Form
     {
         private User _user { get; set; }
+
+        /// <summary>
+        /// Constructorul clasei UserFlightsForm.
+        /// </summary>
+        /// <param name="user">Utilizatorul curent care vizualizează zborurile.</param>
         public UserFlightsForm(User user)
         {
             InitializeComponent();
@@ -22,12 +30,16 @@ namespace ProiectIP
             this.Load += new EventHandler(UserFlightsForm_Load);
         }
 
+        /// <summary>
+        /// Evenimentul declanșat la încărcarea formularului.
+        /// </summary>
         private void UserFlightsForm_Load(object sender, EventArgs e)
         {
             try
             {
                 using (var context = new DatabaseContext("DataBase.db"))
                 {
+                    // Se selectează zborurile disponibile și se afișează într-un DataGridView
                     var flights = context.Flights
                     .Select(f => new
                     {
@@ -42,6 +54,7 @@ namespace ProiectIP
                     .ToList();
                     dataGridViewFlights.DataSource = flights;
 
+                    // Se adaugă un buton în fiecare rând al DataGridView pentru cumpărarea biletului
                     DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
                     btn.HeaderText = "Acțiune";
                     btn.Name = "btnCumpara";
@@ -56,6 +69,10 @@ namespace ProiectIP
                 MessageBox.Show(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Eveniment declanșat la apăsarea butonului "Cumpara" pentru un anumit zbor.
+        /// </summary>
         private void DataGridViewFlights_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -66,13 +83,14 @@ namespace ProiectIP
 
                     using (var context = new DatabaseContext("DataBase.db"))
                     {
+                        // Se verifică disponibilitatea locurilor pentru zbor
                         var flight = context.Flights.FirstOrDefault(f => f.ZborID == zborID);
                         if (flight == null || flight.LocuriDisponibile <= 0)
                         {
                             throw new Exception("Nu mai sunt locuri disponibile pentru acest zbor.");
-                            return;
                         }
 
+                        // Se încearcă achiziționarea unui bilet pentru utilizator
                         var availableTicket = context.Tickets.FirstOrDefault(t => t.ZborID == zborID && t.Stare == "Valabil");
                         if (availableTicket != null)
                         {
@@ -83,7 +101,7 @@ namespace ProiectIP
                             context.SaveChanges();
 
                             MessageBox.Show("Bilet cumpărat cu succes!");
-                            UserFlightsForm_Load(this, EventArgs.Empty);
+                            UserFlightsForm_Load(this, EventArgs.Empty); // Se reîncarcă zborurile disponibile
 
                         }
                         else

@@ -2,19 +2,24 @@
 using ChainOfResponsibility.Interfaces;
 using DatabaseAccess.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ChainOfResponsibility.Validators
 {
+    /// <summary>
+    /// Validatorul pentru zboruri, care utilizează un lanț de responsabilitate pentru validare.
+    /// </summary>
     public class FlightValidator
     {
         private readonly IFlightHandler _handler;
 
+        /// <summary>
+        /// Constructorul clasei FlightValidator.
+        /// Inițializează lanțul de responsabilitate cu diferitele manipulatoare de validare.
+        /// </summary>
         public FlightValidator()
         {
+            // Inițializează lanțul de responsabilitate cu primul manipulator care va fi utilizat.
             _handler = new CityHandler();
             _handler.SetNext(new SeatsHandler())
                     .SetNext(new PriceHandler())
@@ -23,8 +28,13 @@ namespace ChainOfResponsibility.Validators
                     .SetNext(new DateHandler());
         }
 
+        /// <summary>
+        /// Metoda pentru validarea unui zbor folosind lanțul de responsabilitate.
+        /// </summary>
+        /// <param name="flight">Zborul care trebuie validat.</param>
         public void Validate(Flight flight)
         {
+            // Apelarea metodei Handle() a primului manipulator din lanț pentru a începe validarea.
             _handler.Handle(flight);
         }
     }

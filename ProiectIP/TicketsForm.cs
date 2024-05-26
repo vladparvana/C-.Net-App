@@ -12,10 +12,17 @@ using System.Windows.Forms;
 
 namespace ProiectIP
 {
+    /// <summary>
+    /// Fereastra pentru afișarea biletelor utilizatorului curent.
+    /// </summary>
     public partial class TicketsForm : Form
     {
-
         private User _user { get; set; }
+
+        /// <summary>
+        /// Constructorul clasei TicketsForm.
+        /// </summary>
+        /// <param name="user">Utilizatorul curent pentru care se afișează biletele.</param>
         public TicketsForm(User user)
         {
             InitializeComponent();
@@ -23,18 +30,23 @@ namespace ProiectIP
             this.Load += new EventHandler(TicketsForm_Load);
         }
 
+        /// <summary>
+        /// Evenimentul declanșat la încărcarea formularului.
+        /// </summary>
         private void TicketsForm_Load(object sender, EventArgs e)
         {
             try
             {
                 using (var context = new DatabaseContext("DataBase.db"))
                 {
+                    // Se obțin biletele utilizatorului curent cu starea "Cumparat"
                     var userTickets = context.Tickets
                         .Where(t => t.UserID == _user.UserID && t.Stare == "Cumparat")
                         .ToList();
 
                     var ticketDetails = new List<object>();
 
+                    // Pentru fiecare bilet, se obțin detalii despre zborul asociat
                     foreach (var ticket in userTickets)
                     {
                         var zborInfo = context.Flights
@@ -49,6 +61,7 @@ namespace ProiectIP
                             })
                             .FirstOrDefault();
 
+                        // Se creează un obiect cu detalii complete despre bilet
                         var ticketDetail = new
                         {
                             ticket.BiletID,
@@ -66,6 +79,7 @@ namespace ProiectIP
                         ticketDetails.Add(ticketDetail);
                     }
 
+                    // Se afișează detaliile biletelor într-un control DataGridView
                     dataGridViewTickets.DataSource = ticketDetails;
                 }
             }
@@ -74,6 +88,5 @@ namespace ProiectIP
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

@@ -1,3 +1,5 @@
+D:\ProiectIP\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.AssemblyReference.cache
+D:\ProiectIP\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.CoreCompileInputs.cache
 D:\ProiectIP\DatabaseAccess\bin\Debug\x86\sqlite3.dll
 D:\ProiectIP\DatabaseAccess\bin\Debug\x64\sqlite3.dll
 D:\ProiectIP\DatabaseAccess\bin\Debug\DatabaseAccess.dll.config
@@ -24,8 +26,6 @@ D:\ProiectIP\DatabaseAccess\bin\Debug\System.Data.SQLite.xml
 D:\ProiectIP\DatabaseAccess\bin\Debug\System.Memory.xml
 D:\ProiectIP\DatabaseAccess\bin\Debug\System.Numerics.Vectors.xml
 D:\ProiectIP\DatabaseAccess\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\ProiectIP\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.AssemblyReference.cache
-D:\ProiectIP\DatabaseAccess\obj\Debug\DatabaseAccess.csproj.CoreCompileInputs.cache
 D:\ProiectIP\DatabaseAccess\obj\Debug\Database.3C889C45.Up2Date
 D:\ProiectIP\DatabaseAccess\obj\Debug\DatabaseAccess.dll
 D:\ProiectIP\DatabaseAccess\obj\Debug\DatabaseAccess.pdb
