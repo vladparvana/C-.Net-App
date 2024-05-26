@@ -1,0 +1,14 @@
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\ChainOfResponsibility.dll
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\ChainOfResponsibility.pdb
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\DatabaseAccess.dll
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\EntityFramework.dll
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\System.Data.SQLite.dll
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\DatabaseAccess.pdb
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\DatabaseAccess.dll.config
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\EntityFramework.xml
+D:\ProiectIP\ChainOfResponsibility\bin\Debug\System.Data.SQLite.xml
+D:\ProiectIP\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.csproj.AssemblyReference.cache
+D:\ProiectIP\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.csproj.CoreCompileInputs.cache
+D:\ProiectIP\ChainOfResponsibility\obj\Debug\ChainOfR.6C672FA9.Up2Date
+D:\ProiectIP\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.dll
+D:\ProiectIP\ChainOfResponsibility\obj\Debug\ChainOfResponsibility.pdb
