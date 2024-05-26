@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\ProiectIP\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{95BBD538-5180-44E3-89E5-7B41E67FAB59}|ProiectIP\\ProiectIP.csproj|d:\\proiectip\\proiectip\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95BBD538-5180-44E3-89E5-7B41E67FAB59}|ProiectIP\\ProiectIP.csproj|solutionrelative:proiectip\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "D:\\ProiectIP\\ProiectIP\\LoginForm.cs",
+              "RelativeDocumentMoniker": "ProiectIP\\LoginForm.cs",
+              "ToolTip": "D:\\ProiectIP\\ProiectIP\\LoginForm.cs",
+              "RelativeToolTip": "ProiectIP\\LoginForm.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAAACsAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T16:42:30.713Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
